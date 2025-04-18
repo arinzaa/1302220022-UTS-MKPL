@@ -31,7 +31,9 @@ public class Employee {
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address,
+                int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender)
+{
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -52,29 +54,29 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
-	 public void setMonthlySalary(int grade) {
-		int baseSalary;
-		switch (grade) {
-			case 1:
-				baseSalary = 3000000;
-				break;
-			case 2:
-				baseSalary = 5000000;
-				break;
-			case 3:
-				baseSalary = 7000000;
-				break;
-			default:
-				throw new IllegalArgumentException("Invalid grade: " + grade);
-		}
-	
-		if (isForeigner) {
-			baseSalary *= 1.5;
-		}
-	
-		monthlySalary = baseSalary;
-	}
-	
+	public void setMonthlySalary(int grade) {
+    int baseSalary;
+    switch (grade) {
+        case 1:
+            baseSalary = 3000000;
+            break;
+        case 2:
+            baseSalary = 5000000;
+            break;
+        case 3:
+            baseSalary = 7000000;
+            break;
+        default:
+            throw new IllegalArgumentException("Invalid grade: " + grade);
+    }
+
+    if (isForeigner) {
+        baseSalary *= 1.5;
+    }
+
+    monthlySalary = baseSalary;
+}
+
 	
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;
